@@ -1,0 +1,42 @@
+pm disable-user com.sonyericsson.xhs
+pm disable-user com.sonymobile.xperialounge.services
+pm disable-user com.sonyericsson.updatecenter
+pm disable-user com.sonymobile.xperiatransfermobile
+
+
+
+pm uninstall -k --user 0 com.facebook.system
+pm uninstall -k --user 0 com.facebook.appmanager
+pm uninstall -k --user 0 com.facebook.services
+pm uninstall -k --user 0 com.sonymobile.support
+pm uninstall -k --user 0 com.sonymobile.assist
+pm uninstall -k --user 0 com.google.android.syncadapters.contacts
+pm uninstall -k --user 0 com.google.android.onetimeinitializer
+pm uninstall -k --user 0 com.android.hotwordenrollment.okgoogle
+pm uninstall -k --user 0 com.google.android.tts
+pm uninstall -k --user 0 com.touchtype.swiftkey
+pm uninstall -k --user 0 com.touchtype.swiftkey.res.overlay
+pm uninstall -k --user 0 com.swiftkey.swiftkeyconfigurator
+pm uninstall -k --user 0 com.amazon.mShop.android.shopping
+pm uninstall -k --user 0 com.sony.nfx.app.sfrc
+pm uninstall -k --user 0 com.sonymobile.scan3d
+pm uninstall -k --user 0 com.google.android.youtube
+pm uninstall -k --user 0 com.sonymobile.sketch
+pm uninstall -k --user 0 com.google.android.googlequicksearchbox
+pm uninstall -k --user 0 com.google.android.apps.docs.editors.docs
+pm uninstall -k --user 0 com.sonymobile.lifelog
+pm uninstall -k --user 0 com.google.android.apps.docs.editors.sheets
+pm uninstall -k --user 0 com.google.android.apps.docs.editors.slides
+pm uninstall -k --user 0 com.google.android.gm
+pm uninstall -k --user 0 com.google.android.apps.tachyon
+pm uninstall -k --user 0 com.s.antivirus
+pm uninstall -k --user 0 com.sony.tvsideview.phone
+pm uninstall -k --user 0 com.google.android.apps.docs
+pm uninstall -k --user 0 com.google.android.apps.maps
+pm uninstall -k --user 0 com.google.android.videos
+pm uninstall -k --user 0 com.google.android.apps.photos
+pm uninstall -k --user 0 com.sonymobile.moviecreator.rmm
+pm uninstall -k --user 0 com.sonymobile.email
+pm uninstall -k --user 0 com.sonyericsson.textinput.chinese
+pm uninstall -k --user 0 com.sonymobile.pobox
+pm uninstall -k --user 0 com.sonymobile.entrance
