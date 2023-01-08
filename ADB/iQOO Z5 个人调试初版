@@ -1,0 +1,99 @@
+pm disable-user com.vivo.fuelsummary                  电源信息
+pm disable-user com.bbk.scene.launcher.theme          场景主题launcher
+pm disable-user com.vivo.appfilter                    管家服务插件
+pm disable-user com.vivo.fingerprintengineer          指纹工程模式
+pm disable-user com.vivo.smartanswer                  电话秘书
+pm disable-user com.android.browser                   浏览器
+pm disable-user com.vivo.iotserver                    IoT服务引擎
+pm disable-user com.vivo.secime.service               SecIME
+pm disable-user com.bbk.cloud                         云服务
+pm disable-user com.bbk.theme                         i主题
+pm disable-user com.bbk.calendar                      日历
+pm disable-user com.vlife.vivo.wallpaper              动态锁屏服务
+pm disable-user com.vivo.aiengine                     人工服务引擎
+pm disable-user com.vivo.engineercamera               工模相机
+pm disable-user com.bbk.facewake                      智能保持亮屏
+pm disable-user com.vivo.networkstate                 网络状态
+pm disable-user com.android.VideoPlayer               i视频
+pm disable-user com.bbk.appstore                      应用商店
+pm disable-user com.vivo.findphone                    查找手机
+pm disable-user com.vivo.networkimprove               网络改善
+pm disable-user com.android.vivo.tws.vivotws          VIVOTWS耳机
+pm disable-user com.bbk.theme.resources               vivo壁纸资源
+pm disable-user com.vivo.multinlp                     Vivo定位服务
+pm disable-user com.bbk.scene.databaseprovider        场景数据库提供者
+pm disable-user com.vivo.wifiengineermode             wifi工程师模式
+pm disable-user com.vivo.agent                        Jovi语音
+pm disable-user com.vivo.share                        VIVO互传
+pm disable-user com.vivo.space                        VIVO官网
+pm disable-user com.vivo.aiservice                    AI服务
+pm disable-user com.vivo.browser                      VIVO浏览器
+pm disable-user com.vivo.bsptest                      BSPtest
+pm disable-user com.vivo.motionrecognition            智能体感
+pm disable-user com.bbk.account                       vivo账号
+pm disable-user com.vivo.familycare.local             健康使用设备
+pm disable-user com.vivo.quickpay                     快捷支付
+pm disable-user com.vivo.hybrid                       快应用
+pm disable-user com.vivo.pcsuite                      量子套件
+pm disable-user com.vivo.video.floating               视频通话美颜
+pm disable-user com.android.bbklog                    日志信息采集 建议卸载
+pm disable-user com.vivo.phonehandoff                 通话接力
+pm disable-user com.baidu.map.location                网络位置 //baudu
+pm disable-user com.bbk.photoframewidget              相框
+pm disable-user com.vivo.floatingball                 悬浮球
+pm disable-user com.iflytek.speechsuite               讯飞语音引擎
+pm disable-user com.vivo.vivokaraoke                  移动KTV
+pm disable-user com.bbk.iqoo.logsystem                用户体验改进计划服务
+pm disable-user com.vivo.voicewakeup                  语音唤醒
+pm disable-user com.vivo.deformer                     原景视窗
+pm disable-user com.vivo.remoteassistant              远程协助
+pm disable-user com.vivo.smartLife                    智慧生活服务
+pm disable-user com.vivo.abe                          智慧引擎
+pm disable-user com.vivo.car.networking               智能车载
+pm disable-user com.vivo.smartunlock                  智能解锁
+pm disable-user com.android.calllogbackup             Call Log Backup/Restore
+pm disable-user com.vivo.gamewatch                    GameWatch
+pm disable-user com.vivo.vivo3rdalgoservice           VIVO第三代图像算法
+pm disable-user com.vivo.simpleiconthemeres           简单图标主题资源
+pm disable-user com.vivo.sps                          Super Process System
+pm disable-user com.vivo.tam                          Tam Server
+pm disable-user com.vivo.tam.tamserver                Tam Server App
+pm disable-user com.vivo.vhomeguide                   VIVO家庭
+pm disable-user com.vivo.vibrator4d                   振动器4d
+pm disable-user com.vivo.singularity                  VIVO SYSTEM WEBVIEW
+pm disable-user com.vivo.dr                           VIVO-DR
+pm disable-user com.vivo.sdkplugin                    vivo服务安全插件
+pm disable-user com.vivo.vms                          VIVO移动服务
+pm disable-user com.vivo.livewallpaper.behavior.resources       壁纸资源
+pm disable-user com.google.android.printservice.recommendation  打印服务推荐服务
+
+
+originos ocean后需要ROOT权限才能禁用
+pm disable-user com.vivo.assistant                    重要通知 Jovi
+pm disable-user com.vivo.vtouch                       智慧视觉
+pm disable-user com.vivo.favorite                     收藏
+pm disable-user com.vivo.upnpserver                   投屏
+pm disable-user com.vivo.wallet                       钱包
+pm disable-user com.vivo.xspace                       原子隐私系统
+pm disable-user com.vivo.gamecube                     游戏魔盒
+pm disable-user com.vivo.carlauncher                  车载launcher
+pm disable-user com.vivo.SmartKey                     快捷启动
+pm disable-user com.vivo.cipherchain                  密码保险箱
+pm disable-user com.vivo.contentcatcher               全局内容识别
+pm disable-user com.vivo.globalsearch                 全局搜索
+pm disable-user com.vivo.weather.provider             天气存储
+pm disable-user com.vivo.pushservice                  推送引擎
+pm disable-user com.bbk.updater                       系统升级
+pm disable-user com.vivo.gallery                      VIVO相册
+pm disable-user com.vivo.audiofx                      音效设置
+pm disable-user com.vivo.doubleinstance               应用分身
+pm disable-user com.vivo.magazine                     阅图锁屏服务
+pm disable-user com.vivo.hiboard                      智慧桌面
+pm disable-user com.android.bbkmusic                  i音乐
+pm disable-user com.vivo.daemonService                VIVO服务
+pm disable-user com.vivo.accessibility                VIVO听说
+
+
+
+可以禁用但本人需要的东西
+pm disable-user com.tencent.soter.soterserver         解锁微信等应用生物识别
