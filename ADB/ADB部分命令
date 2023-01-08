@@ -1,0 +1,26 @@
+pm uninstall -k --user 0 <package>    卸载应用
+pm install-existing <package>         安装卸载的应用
+pm disable-user <package>             停用APP
+pm enable <package>                   启用APP
+
+pm list package -d                    查询当前禁用的APP
+
+-f将包含每个应用程序的基本 APK 的路径及其包名称。
+-a将确保返回所有已知的非 APEX 包。
+-d将导致该命令仅返回禁用的包。
+-e将导致该命令仅返回启用的包。
+-s 将导致该命令仅返回系统包。
+-3将导致该命令仅返回第三方包。
+-i将包括每个包的安装程序包名称。
+-U 将包括每个包的包 UID。
+-u将包括已卸载的软件包。
+–show-versioncode将包含每个包的版本代码。
+--apex-only将只返回 APEX 包。
+–uid <UID>将仅显示具有给定 UID 的包。
+–user <USER_ID>将只显示属于给定用户 ID 的包。
+
+adb connect XXX.XXX.XXX.XXX:XXXXX     WIFI链接ADB
+adb install XXX.APK                   安装APK
+adb devices                           ADB看设备
+
+adb install -i 'com.android.vending' 
