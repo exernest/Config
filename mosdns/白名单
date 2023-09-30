@@ -8,7 +8,7 @@ api:
 include: []
 plugins:
 
- ## > GeoSite 规则
+ ## > GeoSite 规则 + OpenWrt luci网页 白名单/DDNS 规则
   - tag: direct_domain
     type: domain_set
     args:
@@ -18,12 +18,22 @@ plugins:
         - "/var/mosdns/geosite_category-games@cn.txt"
         - "/var/mosdns/geosite_apple-cn.txt"
         - "/var/mosdns/geosite_icloud.txt"
+        - "/etc/mosdns/rule/whitelist.txt"
+        - "/etc/mosdns/rule/ddnslist.txt"
 
   - tag: cloudflare_cidr
     type: ip_set
     args:
       files:
         - "/etc/mosdns/rule/cloudflare-cidr.txt"
+
+ ## > OpenWrt luci 网页 黑/灰名单 规则
+  - tag: rule_domain
+    type: domain_set
+    args:
+      files:
+        - "/etc/mosdns/rule/blocklist.txt"
+        - "/etc/mosdns/rule/greylist.txt"
 
   ## > 转发和解析设置
   # 转发到smartdns
@@ -48,6 +58,12 @@ plugins:
       - matches: "qname $direct_domain"
         exec: $forward_smartdns
 
+  - tag: query_is_rule_domain
+    type: sequence
+    args:
+      - matches: "qname $direct_domain"
+        exec: $forward_openclash
+
   # 响应相关
   - tag: has_resp
     type: sequence
@@ -62,6 +78,8 @@ plugins:
   - tag: main_sequence
     type: sequence
     args:
+      - exec: $query_is_rule_domain
+      - exec: jump has_resp
       - exec: $query_is_direct_domain
       - exec: jump has_resp
       - exec: $forward_openclash
