@@ -8,18 +8,28 @@ api:
 include: []
 plugins:
 
- ## > GeoSite 规则
+ ## > GeoSite 规则 + OpenWrt luci 网页 黑/灰名单 规则
   - tag: gfw_domain
     type: domain_set
     args:
       files:
         - "/var/mosdns/geosite_gfw.txt"
+        - "/etc/mosdns/rule/blocklist.txt"
+        - "/etc/mosdns/rule/greylist.txt"
 
   - tag: cloudflare_cidr
     type: ip_set
     args:
       files:
         - "/etc/mosdns/rule/cloudflare-cidr.txt"
+
+ ## > OpenWrt luci 网页 白名单/DDNS 规则
+  - tag: direct_domain
+    type: domain_set
+    args:
+      files:
+        - "/etc/mosdns/rule/whitelist.txt"
+        - "/etc/mosdns/rule/ddnslist.txt"
 
   ## > 转发和解析设置
   # 转发到smartdns
@@ -44,12 +54,18 @@ plugins:
       - matches: "qname $gfw_domain"
         exec: $forward_openclash
 
+  - tag: query_is_direct_domain
+    type: sequence
+    args:
+      - matches: "qname $direct_domain"
+        exec: $forward_smartdns
+
   # 响应相关
   - tag: has_resp
     type: sequence
     args:
       - matches: "resp_ip $cloudflare_cidr"
-        exec: black_hole 2606:4700:f3::dd03:5c7d:74e5
+        exec: black_hole 2606:4700:f3::dd03:5c7d:74e5 # 请修改为自选 IP
       - matches: has_resp
         exec: accept
 
@@ -58,6 +74,8 @@ plugins:
   - tag: main_sequence
     type: sequence
     args:
+      - exec: $query_is_direct_domain
+      - exec: jump has_resp
       - exec: $query_is_gfw_domain
       - exec: jump has_resp
       - exec: $forward_smartdns
