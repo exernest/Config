@@ -8,7 +8,7 @@ api:
 include: []
 plugins:
 
- ## > GeoSite 规则
+ ## > GeoSite 规则 + OpenWrt luci 网页 黑/灰名单 规则
   - tag: gfw_domain
     type: domain_set
     args:
@@ -17,13 +17,13 @@ plugins:
         - "/etc/mosdns/rule/blocklist.txt"
         - "/etc/mosdns/rule/greylist.txt"
 
-
   - tag: cloudflare_cidr
     type: ip_set
     args:
       files:
         - "/etc/mosdns/rule/cloudflare-cidr.txt"
 
+ ## > OpenWrt luci 网页 白名单/DDNS 规则
   - tag: direct_domain
     type: domain_set
     args:
