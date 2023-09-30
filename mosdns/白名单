@@ -1,0 +1,74 @@
+log:
+  level: info
+  file: "/tmp/mosdns.log"
+
+# API 入口设置
+api:
+  http: "0.0.0.0:9091"
+include: []
+plugins:
+
+ ## > GeoSite 规则
+  - tag: direct_domain
+    type: domain_set
+    args:
+      files:
+        - "/var/mosdns/geosite_cn.txt"
+        - "/var/mosdns/geosite_tld-cn.txt"
+        - "/var/mosdns/geosite_category-games@cn.txt"
+        - "/var/mosdns/geosite_apple-cn.txt"
+        - "/var/mosdns/geosite_icloud.txt"
+
+  - tag: cloudflare_cidr
+    type: ip_set
+    args:
+      files:
+        - "/etc/mosdns/rule/cloudflare-cidr.txt"
+
+  ## > 转发和解析设置
+  # 转发到smartdns
+  - tag: forward_smartdns
+    type: forward
+    args:
+      upstreams:
+        - addr: 10.1.1.1:5353
+
+  # 转发到openclash
+  - tag: forward_openclash
+    type: forward
+    args:
+      upstreams:
+        - addr: 127.0.0.1:7874
+
+  ## > 解析判断逻辑
+  # 查询是否为 国内域名
+  - tag: query_is_direct_domain
+    type: sequence
+    args:
+      - matches: "qname $direct_domain"
+        exec: $forward_smartdns
+
+  # 响应相关
+  - tag: has_resp
+    type: sequence
+    args:
+      - matches: "resp_ip $cloudflare_cidr"
+        exec: black_hole 2606:4700:f3::dd03:5c7d:74e5
+      - matches: has_resp
+        exec: accept
+
+  ## > 主要的运行逻辑插件
+  # sequence 插件中调用的插件 tag 必须在 sequence 前定义，否则 sequence 找不到对应插件。
+  - tag: main_sequence
+    type: sequence
+    args:
+      - exec: $query_is_direct_domain
+      - exec: jump has_resp
+      - exec: $forward_openclash
+
+  # 启动 udp 服务器
+  - tag: udp_server
+    type: udp_server
+    args:
+      entry: main_sequence
+      listen: ":5335"
