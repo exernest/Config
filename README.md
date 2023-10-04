@@ -27,7 +27,7 @@
  </tr>
 <tr>
   <th height="19" class="xl67" style="height:14.25pt;border-top:none">ISP</th>
-  <th class="xl68" style="border-top:none;border-left:none">旁路猫</th>
+  <th class="xl68" style="border-top:none;border-left:none">旁路由</th>
   <th colspan="2" class="xl67"><span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </span>mos<span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>CF优选</th>
  </tr>
@@ -39,15 +39,15 @@
  </tr>
 <tr>
   <th height="19" class="xl67" style="height:14.25pt;border-top:none">　</th>
-  <th class="xl67" style="border-top:none;border-left:none">rfc2544</th>
-  <th class="xl67" style="border-top:none">smarthns</th>
-  <th class="xl68" style="border-top:none;border-left:none">旁路猫</th>
+  <th class="xl67" style="border-top:none;border-left:none">fakeip</th>
+  <th class="xl67" style="border-top:none">smartdns</th>
+  <th class="xl68" style="border-top:none;border-left:none">旁路由</th>
  </tr>
 <tr>
-  <th height="19" class="xl65" style="height:14.25pt"></th>
-  <th class="xl65"></th>
+  <th height="19" class="xl67" style="height:14.25pt;border-top:none">　</th>
+  <th class="xl67" style="border-top:none;border-left:none">rfc2544</th>
   <th class="xl67" style="border-top:none">直连EDNS优选</th>
-  <th class="xl67" style="border-top:none;border-left:none">fakeip模式</th>
+  <th class="xl67" style="border-top:none;border-left:none">fakeip</th>
  </tr>
 </table>   
 </escape>
